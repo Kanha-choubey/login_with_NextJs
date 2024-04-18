@@ -67,11 +67,10 @@ const createArticleData: createArticleData[] = [
 ];
 
 export default function Dashboard() {
- 
   return (
-    <div className="flex flex-col justify-center gap-5 w-full ">
-      <PageTitle title="Dashboard" />
-      <section className="grid w-full grid-cols-1 gap-x-8 gap-4  transition-all sm:grid-cols-2 xl:grid-cols-4">
+    <div className="flex flex-col  justify-center gap-5  ">
+      <PageTitle className="text-3xl font-extrabold" title="Dashboard" />
+      <section className="grid w-full grid-cols-1 gap-x-8 gap-4   transition-all sm:grid-cols-2 xl:grid-cols-4">
         {carDummyData.map((data, i) => (
           <Card
             key={i}
