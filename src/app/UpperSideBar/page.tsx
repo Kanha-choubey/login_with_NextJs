@@ -2,7 +2,7 @@
 
 import { ModeToggle } from "@/components/toggle_button";
 import { Button } from "@/components/ui/button";
-import { Nav } from "@/components/ui/nav";
+
 import {
   DropdownMenu,
   DropdownMenuContent,

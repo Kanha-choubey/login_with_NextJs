@@ -6,7 +6,7 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   return (
     <>
-      <div className="w-full">
+      <div className="">
         <Dashboard />
       </div>
     </>

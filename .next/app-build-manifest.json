@@ -12,20 +12,20 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/articles/page": [
+    "/users/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/articles/page.js"
+      "static/chunks/app/users/page.js"
     ],
     "/categories/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/categories/page.js"
     ],
-    "/users/page": [
+    "/articles/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/users/page.js"
+      "static/chunks/app/articles/page.js"
     ]
   }
 }

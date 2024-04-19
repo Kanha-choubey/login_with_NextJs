@@ -26,7 +26,7 @@ export default function RootLayout({
           "debug-screens": process.env.NODE_ENV === "development",
         })} `}
       >
-        <div className="flex w-full overflow-hidden">
+        <div className="grid grid-cols-[0.5fr_5fr] grid-rows-[1fr] gap-x-[0px] gap-y-[0px] overflow-hidden">
           {isLogin ? (
             <Login />
           ) : (
@@ -36,10 +36,13 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <SideNavbar />
-              <div className="flex w-full flex-col-reverse  ">
+              <div className="">
+                <SideNavbar />
+              </div>
+
+              <div className="grid  grid-rows-[0.01fr_fr] gap-x-[0px] gap-y-[0px] w-full ">
                 <UpperNavBar />
-                <div className=" p-8 mt-14">{children}</div>
+                <div className="mt-14 w-full p-8 ">{children}</div>
               </div>
             </ThemeProvider>
           )}
