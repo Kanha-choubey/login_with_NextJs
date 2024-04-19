@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 
-export type createArticleData = {
+export type createArticleData  = {
   name: string;
   email: string;
-  numberOfArticle?: number;
+  numberOfArticle: number;
 };
 
 const CreateArtical = (props: createArticleData) => {

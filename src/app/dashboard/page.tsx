@@ -3,11 +3,13 @@ import Login from "@/app/login/page";
 import BarChart from "@/components/BarChart";
 import Card, { CardContent, CardProps } from "@/components/Card";
 import CreateArtical, { createArticleData } from "@/components/CreateArtical";
+import Aos from "aos";
 
 import PageTitle from "@/components/PageTitle";
 
 import { DollarSign, Layers3, UserCog, UsersRound } from "lucide-react";
 import { useEffect } from "react";
+
 const carDummyData: CardProps[] = [
   {
     label: "Total Revenue",
@@ -48,6 +50,7 @@ const createArticleData: createArticleData[] = [
   {
     name: "Ritik sharma",
     email: "sharma@gmail.com",
+    numberOfArticle: 12,
   },
   {
     name: "Neha Tiwari",
@@ -67,12 +70,18 @@ const createArticleData: createArticleData[] = [
 ];
 
 export default function Dashboard() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  });
   return (
-    <div className="flex flex-col  justify-center gap-5  ">
+    <div className="flex flex-col justify-center gap-5 w-full ">
       <PageTitle className="text-3xl font-extrabold" title="Dashboard" />
-      <section className="grid w-full grid-cols-1 gap-x-8 gap-4   transition-all sm:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full grid-cols-1 gap-x-8 gap-5   transition-all sm:grid-cols-2 xl:grid-cols-4">
         {carDummyData.map((data, i) => (
           <Card
+            data-aos="flip-up"
             key={i}
             discription={data.discription}
             icon={data.icon}
@@ -85,7 +94,9 @@ export default function Dashboard() {
       <section className="grid-cols-1 grid gap-4 transition-all lg:grid-cols-2">
         <CardContent>
           <p className="p-4 font-semibold">Overview</p>
-          <BarChart />
+          <span className="color-red-400">
+            <BarChart />
+          </span>
         </CardContent>
         <CardContent className="flex justify-between gap-4">
           <section>
@@ -94,6 +105,7 @@ export default function Dashboard() {
           </section>
           {createArticleData.map((data, i) => (
             <CreateArtical
+              key={i}
               name={data.name}
               email={data.email}
               numberOfArticle={data.numberOfArticle}

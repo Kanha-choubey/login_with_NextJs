@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
-import SideNavbar from "./sideNavbar/SideNavbar";
+import SideNavbar from "./sideNavbar/page";
 import Login from "./login/page";
 import UpperNavBar from "./UpperSideBar/page";
 const inter = Inter({ subsets: ["latin"] });
@@ -21,12 +21,16 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${cn("", inter.className, {
-          "debug-screens": process.env.NODE_ENV === "development",
-        })} `}
-      >
-        <div className="grid grid-cols-[0.5fr_5fr] grid-rows-[1fr] gap-x-[0px] gap-y-[0px] overflow-hidden">
+      <body>
+        <div
+          className={`${cn(
+            "grid grid-cols-[0.3fr_2fr] grid-rows-[1fr] gap-x-[6px] gap-y-[0px] overflow-hidden",
+            inter.className,
+            {
+              "debug-screens": process.env.NODE_ENV === "development",
+            }
+          )}`}
+        >
           {isLogin ? (
             <Login />
           ) : (
@@ -36,11 +40,9 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="">
-                <SideNavbar />
-              </div>
+              <SideNavbar />
 
-              <div className="grid  grid-rows-[0.01fr_fr] gap-x-[0px] gap-y-[0px] w-full ">
+              <div className="grid grid-cols-[1fr] grid-rows-[0.3fr_0fr] gap-x-[px] gap-y-[1px] w-full ">
                 <UpperNavBar />
                 <div className="mt-14 w-full p-8 ">{children}</div>
               </div>
