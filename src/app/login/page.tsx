@@ -46,7 +46,7 @@ const Login = () => {
   });
 
   return (
-    <div className="flex justify-center container items-center">
+    <div className={` my-auto mx-auto`}>
       <form
         data-aos="zoom-in"
         data-aos-offset="100"
